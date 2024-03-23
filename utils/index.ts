@@ -18,8 +18,8 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 export async function fetchCars(filters: FilterProps) {
   const { make, year, model, limit, fuel } = filters;
   const headers = {
-    "X-RapidAPI-Key": process.env.XRapidAPIKey,
-    "X-RapidAPI-Host": process.env.XRapidAPIHost,
+    "X-RapidAPI-Key": process.env.XRapidAPIKey || "",
+    "X-RapidAPI-Host": process.env.XRapidAPIHost || "",
   };
   try {
     const response = await fetch(
